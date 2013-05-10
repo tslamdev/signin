@@ -1,4 +1,8 @@
 Signin::Application.routes.draw do
+  get '/sessions/new' => 'sessions#new', as: 'new_session'
+  post '/sessions' => 'sessions#create', as: 'sessions'
+  delete '/sessions' => 'sessions#destroy', as: 'session'
+
   # Routes for the User resource:
   # CREATE
   get '/users/new', controller: 'users', action: 'new', as: 'new_user'
